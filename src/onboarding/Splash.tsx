@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
+import Container from '../_shared/styled/Container';
 
 const Splash = () => {
   return (
-    <View>
+    <Container>
       <Text>Splash</Text>
-    </View>
+    </Container>
   );
 };
 

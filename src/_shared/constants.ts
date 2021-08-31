@@ -11,18 +11,13 @@ export const colors = {
 };
 
 export const lightTheme = {
-  black: '#242A37',
   primary: '#FF8C29',
   secondary: '#F25F5C',
   primaryText: '#242A37',
   secondaryText: '#E1E0DF',
-  success: '#5cb85c',
-  danger: '#d9534f',
   backgroundColor: '#F5F5F5',
   surface: '#E1E0DF',
-  grey: '#E1E0DF',
   barStyle: 'dark-content' as StatusBarStyle,
-  white: '#FFFFFF',
   tabBarOptions: {
     inactiveTintColor: 'grey',
     activeTintColor: '#FF8C29',
@@ -33,19 +28,13 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  black: '#242A37',
   primary: '#FF8C29',
   secondary: '#F25F5C',
   primaryText: '#FFFFFF',
   secondaryText: '#E1E0DF',
-  success: '#5cb85c',
-  danger: '#d9534f',
-  motorbike: '#0B3954',
   backgroundColor: '#151515',
   surface: '#272727',
-  grey: '#E1E0DF',
   barStyle: 'light-content' as StatusBarStyle,
-  white: '#FFFFFF',
   tabBarOptions: {
     inactiveTintColor: '#E1E0DF',
     activeTintColor: '#FF8C29',
@@ -61,4 +50,9 @@ export const routes = {
   splash: 'splash',
   archived: 'archived',
   favorites: 'favorites',
+};
+
+export const themes = {
+  dark: darkTheme,
+  light: lightTheme,
 };

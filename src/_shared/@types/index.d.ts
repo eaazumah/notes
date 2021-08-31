@@ -3,18 +3,13 @@ import {AnyAction, CombinedState, Reducer} from 'redux';
 import 'styled-components';
 
 export interface Theme {
-  black: string;
   primary: string;
   secondary: string;
   primaryText: string;
   secondaryText: string;
-  motorbike: string;
-  star: string;
   backgroundColor: string;
   surface: string;
-  grey: string;
   barStyle: StatusBarStyle;
-  white: string;
   tabBarOptions: {
     inactiveTintColor: string;
     activeTintColor: string;
@@ -51,8 +46,10 @@ export type ISearchFilter = {
   tags: Array<string> | [];
 };
 
+export type ITheme = 'dark' | 'light' | undefined;
+
 export interface ISettings {
-  theme: 'dark' | 'light';
+  theme: ITheme;
 }
 
 export type PopupType =
