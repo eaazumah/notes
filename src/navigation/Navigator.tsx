@@ -22,7 +22,7 @@ const Stack = createStackNavigator();
 const Navigator = () => {
   return (
     <NavigationContainer ref={navigatorRef} onReady={onNavigatorReady}>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         {routes.map((route, index) => (
           <Stack.Screen
             key={index}
