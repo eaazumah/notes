@@ -1,12 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-interface Props {}
-
-const Splash = (props: Props) => {
+const Splash = () => {
   return (
     <View>
-      <Text style={{fontSize: 200, marginTop: 90}}>Splash</Text>
+      <Text>Splash</Text>
     </View>
   );
 };

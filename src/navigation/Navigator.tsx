@@ -23,8 +23,12 @@ const Navigator = () => {
   return (
     <NavigationContainer ref={navigatorRef} onReady={onNavigatorReady}>
       <Stack.Navigator>
-        {routes.map((r, index) => (
-          <Stack.Screen key={index} name={r.name} component={r.component} />
+        {routes.map((route, index) => (
+          <Stack.Screen
+            key={index}
+            name={route.name}
+            component={route.component}
+          />
         ))}
       </Stack.Navigator>
     </NavigationContainer>

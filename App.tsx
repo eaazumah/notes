@@ -11,9 +11,7 @@
 import React from 'react';
 import Navigator from './src/navigation/Navigator';
 
-interface Props {}
-
-const App = (props: Props) => {
+const App = () => {
   return <Navigator />;
 };
 
