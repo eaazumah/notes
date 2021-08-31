@@ -9,20 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [14.x]
+
     steps:
       - name: Getting the repo
         uses: actions/checkout@v2
+
       - name: Installing node
         uses: actions/setup-node@v1
+
       - name: Install React Native CLI
-        run: |
-          yarn global add react-native-cli
+        run: yarn global add react-native-cli
+
       - name: Install yarn dependencies
-        run: |
-          yarn install
+        run: yarn install
+
       - name: Running test
         run: |
           yarn lint
