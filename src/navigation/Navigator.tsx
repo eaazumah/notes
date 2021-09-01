@@ -1,10 +1,10 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import {routes as r} from '../@shared/constants';
+import {navigatorRef, onNavigatorReady} from '../@shared/services/navigator';
 import Editor from '../editor/Editor';
 import Splash from '../onboarding/Splash';
-import {routes as r} from '../_shared/constants';
-import {navigatorRef, onNavigatorReady} from '../_shared/services/navigator';
 
 const routes = [
   {
