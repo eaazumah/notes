@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
-import useTheme from '../_shared/hooks/useTheme';
+import useTheme from '../@shared/hooks/useTheme';
 
 interface Props {
   [x: string]: ReactNode;

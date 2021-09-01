@@ -11,9 +11,9 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from './src/@shared/redux/store';
 import Navigator from './src/navigation/Navigator';
 import Wrapper from './src/wrapper/Wrapper';
-import {persistor, store} from './src/_shared/redux/store';
 
 const App = () => {
   return (
