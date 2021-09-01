@@ -1,9 +1,7 @@
 import {useColorScheme} from 'react-native';
 import {useSelector} from 'react-redux';
-import {IReduxSate} from '../@types';
 import getThemeObject from '../helpers/getThemeObject';
-
-const selectTheme = (state: IReduxSate) => state.settings.theme;
+import selectTheme from '../helpers/selectTheme';
 
 const useTheme = () => {
   const system = useColorScheme();
