@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`styled Container works 1`] = `
+exports[`renders correctly 1`] = `
 <View
   style={
     Array [
@@ -14,5 +14,10 @@ exports[`styled Container works 1`] = `
       },
     ]
   }
-/>
+>
+  <SvgMock
+    height={200}
+    width={200}
+  />
+</View>
 `;

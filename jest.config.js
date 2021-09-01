@@ -12,10 +12,11 @@ module.exports = {
   testEnvironment: 'node',
   setupFiles: ['<rootDir>/__mocks__/setup.js'],
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/assetsTransformer.js',
     '\\.(css|less)$': '<rootDir>/__mocks__/assetsTransformer.js',
     '^styled-components$': '<rootDir>/node_modules/styled-components',
+    '\\.svg': '<rootDir>/__mocks__/svgMock.js',
   },
   //   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
 };
