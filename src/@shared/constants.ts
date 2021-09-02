@@ -6,7 +6,7 @@ export const colors = {
   success: '#5cb85c',
   danger: '#d9534f',
   black: '#242A37',
-  primary: '#FF7E00',
+  primary: '#3269ff',
   secondary: '#FF00FF',
 };
 
