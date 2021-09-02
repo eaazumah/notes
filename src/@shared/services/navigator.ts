@@ -1,5 +1,4 @@
-// RootNavigation.js
-
+import {StackActions} from '@react-navigation/native';
 import * as React from 'react';
 import {routes} from '../constants';
 
@@ -26,10 +25,20 @@ export const dispatchNavAction = (action: any) => {
   }
 };
 
-export const getOpenEditor = (noteId: string) => {
-  return () => navigate(routes.editor, {noteId});
-};
-
 export const onNavigatorReady = () => {
   isMountedRef.current = true;
+};
+
+export const navigateToBottomTab = () => {
+  dispatchNavAction(StackActions.replace(routes.bottomTab));
+};
+
+export const getNavigateToBottomTab = () => {
+  return () => {
+    dispatchNavAction(StackActions.replace(routes.bottomTab));
+  };
+};
+
+export const getOpenEditor = (noteId: string) => {
+  return () => navigate(routes.editor, {noteId});
 };
