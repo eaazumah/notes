@@ -5,6 +5,7 @@ import {routes as r} from '../@shared/constants';
 import {navigatorRef, onNavigatorReady} from '../@shared/services/navigator';
 import Editor from '../editor/Editor';
 import Splash from '../onboarding/Splash';
+import BottomTab from './BottomTab';
 
 const routes = [
   {
@@ -14,6 +15,10 @@ const routes = [
   {
     name: r.editor,
     component: Editor,
+  },
+  {
+    name: r.bottomTab,
+    component: BottomTab,
   },
 ];
 

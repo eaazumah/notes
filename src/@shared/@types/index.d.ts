@@ -11,9 +11,9 @@ export interface Theme {
   surface: string;
   barStyle: StatusBarStyle;
   tabBarOptions: {
-    inactiveTintColor: string;
-    activeTintColor: string;
-    style: {
+    tabBarActiveTintColor: string;
+    tabBarInactiveTintColor?: string;
+    tabBarStyle: {
       backgroundColor: string;
     };
   };
@@ -36,8 +36,7 @@ export type IconType =
   | 'MaterialIcons'
   | 'Octicons'
   | 'SimpleLineIcons'
-  | 'Zocial'
-  | undefined;
+  | 'Zocial';
 
 export type ISearchFilter = {
   name: string;

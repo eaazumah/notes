@@ -6,12 +6,12 @@ export const colors = {
   success: '#5cb85c',
   danger: '#d9534f',
   black: '#242A37',
-  primary: '#FF7E00',
+  primary: '#3269ff',
   secondary: '#FF00FF',
 };
 
 export const lightTheme = {
-  primary: '#FF8C29',
+  primary: '#3269ff',
   secondary: '#F25F5C',
   primaryText: '#242A37',
   secondaryText: '#E1E0DF',
@@ -19,16 +19,16 @@ export const lightTheme = {
   surface: '#E1E0DF',
   barStyle: 'dark-content' as StatusBarStyle,
   tabBarOptions: {
-    inactiveTintColor: 'grey',
-    activeTintColor: '#FF8C29',
-    style: {
+    tabBarActiveTintColor: '#3269ff',
+    // tabBarInactiveTintColor: 'grey',
+    tabBarStyle: {
       backgroundColor: '#FFFFFF',
     },
   },
 };
 
 export const darkTheme = {
-  primary: '#FF8C29',
+  primary: '#3269ff',
   secondary: '#F25F5C',
   primaryText: '#FFFFFF',
   secondaryText: '#E1E0DF',
@@ -36,20 +36,21 @@ export const darkTheme = {
   surface: '#272727',
   barStyle: 'light-content' as StatusBarStyle,
   tabBarOptions: {
-    inactiveTintColor: '#E1E0DF',
-    activeTintColor: '#FF8C29',
-    style: {
+    tabBarActiveTintColor: '#3269ff',
+    // tabBarInactiveTintColor: '#E1E0DF',
+    tabBarStyle: {
       backgroundColor: '#151515',
     },
   },
 };
 
 export const routes = {
-  home: 'home',
-  editor: 'editor',
-  splash: 'splash',
-  archived: 'archived',
-  favorites: 'favorites',
+  home: 'Home',
+  editor: 'Editor',
+  splash: 'Splash',
+  archived: 'Archived',
+  favorites: 'Favorites',
+  bottomTab: 'BottomTab',
 };
 
 export const themes = {
