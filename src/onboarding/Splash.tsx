@@ -5,7 +5,7 @@ import Container from '../@shared/styled/Container';
 
 const Splash = () => {
   useEffect(() => {
-    setTimeout(navigateToBottomTab, 300);
+    setTimeout(navigateToBottomTab, 1000);
     return;
   }, []);
   return (
