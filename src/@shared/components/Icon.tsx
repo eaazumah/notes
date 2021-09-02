@@ -39,9 +39,9 @@ export interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = props => {
-  const IconType = IconSets[props.type || 'Ionicons'];
+  const IconByType = IconSets[props.type || 'Ionicons'];
   return (
-    <IconType
+    <IconByType
       testID="icon"
       name={props.name}
       size={props.size}
