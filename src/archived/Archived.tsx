@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text} from 'react-native';
+import Header from '../@shared/components/Header';
 import Container from '../@shared/styled/Container';
 
 const Archived = () => {
   return (
     <Container>
-      <Text>Archived</Text>
+      <Header title={'Archived'} />
     </Container>
   );
 };
