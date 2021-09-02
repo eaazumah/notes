@@ -1,28 +1,40 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {ThemeProvider} from 'styled-components/native';
-import {themes} from '../@shared/constants';
+import useTheme from '../@shared/hooks/useTheme';
 import {store} from '../@shared/redux/store';
 
 interface IReduxProvider {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const TextReduxProvider = ({children}: IReduxProvider) => {
   return <Provider store={store}>{children}</Provider>;
 };
 
-interface ITestProviders {
-  mode: 'light' | 'dark';
+interface ITestThemeProvider {
   children: React.ReactNode;
 }
 
-export const TestProviders = ({children, mode}: ITestProviders) => {
+export const TestThemeProvider = ({children}: ITestThemeProvider) => {
+  const {theme} = useTheme();
   return (
     <TextReduxProvider>
-      <ThemeProvider theme={themes[mode]}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </TextReduxProvider>
   );
 };
 
-export default TestProviders;
+interface ITestProviders {
+  children: React.ReactNode;
+}
+
+const TextProvider = ({children}: ITestProviders) => {
+  return (
+    <TextReduxProvider>
+      <TestThemeProvider>{children}</TestThemeProvider>
+    </TextReduxProvider>
+  );
+};
+
+export default TextProvider;

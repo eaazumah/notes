@@ -1,16 +1,15 @@
 import 'jest-styled-components';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {ThemeProvider} from 'styled-components/native';
-import {lightTheme} from '../../constants';
+import TestProviders from '../../../__testUtils__/Providers';
 import Container from '../Container';
 
 test('styled Container works', () => {
   const tree = renderer
     .create(
-      <ThemeProvider theme={lightTheme}>
+      <TestProviders mode={'light'}>
         <Container />
-      </ThemeProvider>,
+      </TestProviders>,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

@@ -10,8 +10,8 @@ interface Props {
 const Header = (props: Props) => {
   const {theme} = useTheme();
   return (
-    <Container>
-      <Title>{props.title}</Title>
+    <Container testID={'header'}>
+      <Title testID={'title'}>{props.title}</Title>
       <Settings>
         <Icon
           size={25}

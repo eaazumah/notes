@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Header renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexBasis": 0,
+        "flexDirection": "row",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "height": 45,
+        "justifyContent": "space-between",
+        "marginTop": 50,
+        "paddingHorizontal": 17,
+        "width": "100%",
+      },
+    ]
+  }
+  testID="header"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#242A37",
+          "fontSize": 30,
+          "fontWeight": "800",
+        },
+      ]
+    }
+    testID="title"
+  >
+    Home
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Icon
+      color="#242A37"
+      name="settings"
+      size={25}
+      testID="icon"
+    />
+  </View>
+</View>
+`;
