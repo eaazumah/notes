@@ -1,7 +1,7 @@
 import React from 'react';
 import {IconType} from '../@types';
 
-const getIconByType = (type: IconType) => {
+const getIconByType = (type?: IconType) => {
   switch (type) {
     case 'MaterialIcons':
       return React.lazy(

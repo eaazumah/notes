@@ -12,7 +12,7 @@ export interface Theme {
   barStyle: StatusBarStyle;
   tabBarOptions: {
     tabBarActiveTintColor: string;
-    tabBarInactiveTintColor: string;
+    tabBarInactiveTintColor?: string;
     tabBarStyle: {
       backgroundColor: string;
     };

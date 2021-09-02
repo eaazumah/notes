@@ -1,22 +1,27 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import {Text} from 'react-native-svg';
 import {IconType} from '../@types';
 import {colors} from '../constants';
 import getIconByType from '../helpers/getIconByType';
 
-interface Props {
+export interface IconProps {
   name: string;
-  size: number;
-  color: string;
-  type: IconType;
+  size?: number;
+  color?: string;
+  type?: IconType;
 }
 
-const Icon = (props: Props) => {
+const Icon: React.FC<IconProps> = props => {
   const IconByType = getIconByType(props.type);
   return (
-    <Suspense fallback={<Text />}>
-      <IconByType name={props.name} size={props.size} color={props.color} />
-    </Suspense>
+    <React.Suspense fallback={<Text />}>
+      <IconByType
+        testID="icon"
+        name={props.name}
+        size={props.size}
+        color={props.color}
+      />
+    </React.Suspense>
   );
 };
 
