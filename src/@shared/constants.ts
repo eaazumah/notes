@@ -1,4 +1,4 @@
-import {StatusBarStyle} from 'react-native';
+import {Dimensions, StatusBarStyle} from 'react-native';
 
 export const colors = {
   grey: '#E1E0DF',
@@ -16,7 +16,7 @@ export const lightTheme = {
   primaryText: '#242A37',
   secondaryText: '#E1E0DF',
   backgroundColor: '#F5F5F5',
-  surface: '#E1E0DF',
+  surface: '#e6e6e6',
   barStyle: 'dark-content' as StatusBarStyle,
   tabBarOptions: {
     tabBarActiveTintColor: '#3269ff',
@@ -33,7 +33,7 @@ export const darkTheme = {
   primaryText: '#FFFFFF',
   secondaryText: '#E1E0DF',
   backgroundColor: '#151515',
-  surface: '#272727',
+  surface: '#171c26',
   barStyle: 'light-content' as StatusBarStyle,
   tabBarOptions: {
     tabBarActiveTintColor: '#3269ff',
@@ -57,3 +57,6 @@ export const themes = {
   dark: darkTheme,
   light: lightTheme,
 };
+
+export const deviceWidth = Dimensions.get('screen').width;
+export const deviceHeight = Dimensions.get('screen').height;
