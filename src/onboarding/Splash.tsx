@@ -3,7 +3,9 @@ import Logo from '../@shared/assets/logo.svg';
 import {navigateToBottomTab} from '../@shared/services/navigator';
 import Container from '../@shared/styled/Container';
 
-const Splash = () => {
+interface Props {}
+
+const Splash: React.FC<Props> = () => {
   useEffect(() => {
     setTimeout(navigateToBottomTab, 1000);
     return;

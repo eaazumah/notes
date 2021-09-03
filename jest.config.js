@@ -7,10 +7,12 @@ module.exports = {
   clearMocks: true,
   coverageDirectory: 'coverage',
   collectCoverage: true,
-  // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: ['json', 'text', 'html', 'lcov', 'clover'],
   testEnvironment: 'node',
   setupFiles: ['<rootDir>/__mocks__/setup.js'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@react-native|react-native|react-native-vector-icons|react-native-parsed-text)/)',
+  ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/assetsTransformer.js',
@@ -18,5 +20,6 @@ module.exports = {
     '^styled-components$': '<rootDir>/node_modules/styled-components',
     '\\.svg': '<rootDir>/__mocks__/svgMock.js',
   },
+
   //   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
 };

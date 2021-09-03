@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const Editor = () => {
+interface Props {}
+const Editor: React.FC<Props> = () => {
   return (
     <View>
       <Text>Splash</Text>

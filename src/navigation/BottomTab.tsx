@@ -38,8 +38,11 @@ const routes = [
 
 const Tab = createBottomTabNavigator();
 
-const BottomTab = () => {
-  const {theme} = useTheme();
+const BottomTab: React.FC = () => {
+  const {theme, toggleTheme} = useTheme();
+  React.useEffect(() => {
+    toggleTheme('light');
+  }, [toggleTheme]);
   return (
     <Tab.Navigator
       screenOptions={{
@@ -55,9 +58,9 @@ const BottomTab = () => {
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
-                size={30}
+                size={28}
                 {...route.icon}
-                color={focused ? colors.primary : colors.grey}
+                color={focused ? colors.primary : theme.primaryText}
               />
             ),
           }}

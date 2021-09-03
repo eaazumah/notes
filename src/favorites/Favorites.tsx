@@ -1,13 +1,30 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {StyleSheet} from 'react-native';
+import Card from '../@shared/components/Card';
+import Header from '../@shared/components/Header';
 import Container from '../@shared/styled/Container';
+import FlatList from '../@shared/styled/FlatList';
+import getMockNotes from '../__testUtils__/input';
 
-const Favorites = () => {
+interface Props {}
+
+const Favorites: React.FC<Props> = () => {
+  const data = getMockNotes();
   return (
     <Container>
-      <Text>Favorites</Text>
+      <Header title={'Favorites'} />
+      <FlatList
+        data={data}
+        numColumns={2}
+        columnWrapperStyle={columnWrapperStyle}
+        renderItem={({item}) => <Card item={item} />}
+      />
     </Container>
   );
 };
+
+const columnWrapperStyle = StyleSheet.create({
+  columnWrapperStyle: {justifyContent: 'space-between'},
+}).columnWrapperStyle;
 
 export default Favorites;
