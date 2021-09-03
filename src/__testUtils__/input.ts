@@ -4,7 +4,7 @@ import {nanoid} from 'nanoid';
 const items = Array(20).fill(1);
 
 const getMockNotes = () => {
-  return items.map(x => ({
+  return items.map(() => ({
     id: nanoid(),
     createdAt: Date.now(),
     title: faker.lorem.words(),

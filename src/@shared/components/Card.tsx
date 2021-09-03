@@ -46,9 +46,9 @@ const Title = styled.Text`
   color: ${props => props.theme.primaryText};
 `;
 
-const CreatedAt = styled.Text`
-  font-size: 12px;
-  color: ${props => props.theme.primary};
-`;
+// const CreatedAt = styled.Text`
+//   font-size: 12px;
+//   color: ${props => props.theme.primary};
+// `;
 
 export default Card;

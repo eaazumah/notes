@@ -7,7 +7,7 @@ interface Props {
   [x: string]: ReactNode;
 }
 
-const Wrapper = (props: Props) => {
+const Wrapper: React.FC<Props> = props => {
   const {theme} = useTheme();
 
   return (

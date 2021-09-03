@@ -8,7 +8,7 @@ interface Props {
   numberOfLines?: number;
 }
 
-const Parser = (props: Props) => {
+const Parser: React.FC<Props> = props => {
   return (
     <Container>
       <Text numberOfLines={props.numberOfLines} opacity={props.opacity}>

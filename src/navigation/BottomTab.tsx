@@ -38,7 +38,7 @@ const routes = [
 
 const Tab = createBottomTabNavigator();
 
-const BottomTab = () => {
+const BottomTab: React.FC = () => {
   const {theme, toggleTheme} = useTheme();
   React.useEffect(() => {
     toggleTheme('light');

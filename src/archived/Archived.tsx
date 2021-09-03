@@ -6,7 +6,9 @@ import Container from '../@shared/styled/Container';
 import FlatList from '../@shared/styled/FlatList';
 import getMockNotes from '../__testUtils__/input';
 
-const Archived = () => {
+interface Props {}
+
+const Archived: React.FC<Props> = () => {
   const data = getMockNotes();
   return (
     <Container>

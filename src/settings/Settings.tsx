@@ -3,8 +3,8 @@ import Container from '../@shared/styled/Container';
 
 interface Props {}
 
-const Settings = (props: Props) => {
-  return <Container></Container>;
+const Settings: React.FC<Props> = () => {
+  return <Container />;
 };
 
 export default Settings;

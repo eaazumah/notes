@@ -24,7 +24,7 @@ const routes = [
 
 const Stack = createStackNavigator();
 
-const Navigator = () => {
+const Navigator: React.FC = () => {
   return (
     <NavigationContainer ref={navigatorRef} onReady={onNavigatorReady}>
       <Stack.Navigator screenOptions={{headerShown: false}}>

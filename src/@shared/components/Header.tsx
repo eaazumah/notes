@@ -7,7 +7,7 @@ interface Props {
   title: string;
 }
 
-const Header = (props: Props) => {
+const Header: React.FC<Props> = props => {
   const {theme} = useTheme();
   return (
     <Container testID={'header'}>
