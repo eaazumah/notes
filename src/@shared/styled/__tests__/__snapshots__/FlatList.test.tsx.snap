@@ -21,7 +21,6 @@ exports[`styled Container works 1`] = `
     Array [
       Object {
         "backgroundColor": "#F5F5F5",
-        "paddingHorizontal": 15,
       },
     ]
   }
