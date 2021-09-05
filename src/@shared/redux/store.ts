@@ -4,11 +4,10 @@ import {persistReducer, persistStore} from 'redux-persist';
 import {middlewareConfig, persistConfig} from './config';
 import getMiddleware from './helpers/getMiddleware';
 import getRootReducer from './helpers/getRootReducer';
+import notes from './notes/slice';
 import settings from './settings/slice';
 
-const reducers = combineReducers({
-  settings,
-});
+const reducers = combineReducers({notes, settings});
 
 const rootReducer = getRootReducer(reducers);
 const middleware = getMiddleware(middlewareConfig);

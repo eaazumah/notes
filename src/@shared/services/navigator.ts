@@ -42,3 +42,7 @@ export const getNavigateToBottomTab = () => {
 export const getOpenEditor = (noteId: string) => {
   return () => navigate(routes.editor, {noteId});
 };
+
+export const openEditor = () => {
+  return navigate(routes.editor, {});
+};

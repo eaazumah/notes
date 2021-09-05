@@ -1,4 +1,10 @@
-import {StatusBarStyle} from 'react-native';
+import {PayloadAction} from '@reduxjs/toolkit';
+import {
+  NativeSyntheticEvent,
+  StatusBarStyle,
+  TextInputKeyPressEventData,
+  TextInputSelectionChangeEventData,
+} from 'react-native';
 import {AnyAction, CombinedState, Reducer} from 'redux';
 import 'styled-components';
 
@@ -38,19 +44,6 @@ export type IconType =
   | 'SimpleLineIcons'
   | 'Zocial';
 
-export type ISearchFilter = {
-  name: string;
-  price: number;
-  radius: number;
-  tags: Array<string> | [];
-};
-
-export type ITheme = 'dark' | 'light' | undefined;
-
-export interface ISettings {
-  theme: ITheme;
-}
-
 export type PopupType =
   | 'ERROR'
   | 'SUCCESS'
@@ -64,6 +57,35 @@ export type PopupType =
   | undefined
   | null;
 
+/*
+ * Redux state and actions type definitions
+ */
+
+export type ITheme = 'dark' | 'light' | undefined;
+
+export interface ISettings {
+  theme: ITheme;
+}
+
+export interface INote {
+  id: string;
+  text: string;
+  title: string;
+  favorite: boolean;
+  archived: boolean;
+  createdAt: number;
+}
+
+export interface INoteUpdate {
+  id: string;
+  text?: string;
+  title?: string;
+  favorite?: boolean;
+  archived?: boolean;
+}
+
+export interface INotes extends Array<INote> {}
+
 export interface IPopup {
   show: boolean;
   type: PopupType;
@@ -71,9 +93,38 @@ export interface IPopup {
 }
 
 export interface IReduxSate {
+  notes: INotes;
   settings: ISettings;
 }
 
-type ICombinedState = CombinedState<IReduxSate> | undefined;
+export interface IAddNoteAction extends PayloadAction<INote> {}
 
-type IReducers = Reducer<CombinedState<IReduxSate>, AnyAction>;
+export interface IUpdateNoteAction extends PayloadAction<INoteUpdate> {}
+
+export interface IDeleteNoteAction extends PayloadAction<Partial<string>> {}
+
+export type ICombinedState = CombinedState<IReduxSate> | undefined;
+
+export type IReducers = Reducer<CombinedState<IReduxSate>, AnyAction>;
+
+/*
+ * Routes params type definitions
+ */
+
+export interface IEditorRoute {
+  key: string;
+  name: string;
+  params?: {noteId: string};
+}
+
+export type ISelectionChangeEvent =
+  NativeSyntheticEvent<TextInputSelectionChangeEventData>;
+
+export type IonKeyPressEvent = NativeSyntheticEvent<TextInputKeyPressEventData>;
+
+export interface IMatch {
+  content: string;
+  start: number;
+}
+
+export interface IMatches extends Array<IMatch> {}

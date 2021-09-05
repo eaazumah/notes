@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import Parser from '../../parser/Parser';
-import {deviceWidth} from '../constants';
 import capitalize from '../helpers/capitalize';
+import {getOpenEditor} from '../services/navigator';
 
 interface ICardItem {
   id: string;
@@ -18,8 +18,9 @@ interface ICardProps {
 
 const Card: React.FC<ICardProps> = props => {
   const title = capitalize(props.item.title);
+  const openEditor = getOpenEditor(props.item.id);
   return (
-    <Container activeOpacity={0.8}>
+    <Container activeOpacity={0.8} onPress={openEditor}>
       <Title numberOfLines={1}>{title}</Title>
       <Parser numberOfLines={10} opacity={0.8}>
         {props.item.text}
@@ -29,11 +30,11 @@ const Card: React.FC<ICardProps> = props => {
 };
 
 const Container = styled.TouchableOpacity`
+  flex: 1;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
   margin-horizontal: 7px;
-  width: ${deviceWidth / 2.3}px;
   border-width: 1px;
   border-color: ${props => props.theme.surface};
 `;
@@ -45,10 +46,5 @@ const Title = styled.Text`
   font-weight: bold;
   color: ${props => props.theme.primaryText};
 `;
-
-// const CreatedAt = styled.Text`
-//   font-size: 12px;
-//   color: ${props => props.theme.primary};
-// `;
 
 export default Card;

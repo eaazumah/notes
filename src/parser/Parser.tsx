@@ -1,6 +1,7 @@
 import React, {ReactNode} from 'react';
 import ParsedText from 'react-native-parsed-text';
 import styled from 'styled-components/native';
+import {parsers} from './helpers/_constants';
 
 interface Props {
   opacity?: number;
@@ -10,19 +11,14 @@ interface Props {
 
 const Parser: React.FC<Props> = props => {
   return (
-    <Container>
-      <Text numberOfLines={props.numberOfLines} opacity={props.opacity}>
-        {props.children}
-      </Text>
-    </Container>
+    <Text
+      parse={parsers}
+      opacity={props.opacity}
+      numberOfLines={props.numberOfLines}>
+      {props.children}
+    </Text>
   );
 };
-
-const Container = styled.View`
-  flex-shrink: 1;
-  align-items: center;
-  justify-content: center;
-`;
 
 const Text = styled(ParsedText)<{opacity?: number}>`
   font-size: 15px;
