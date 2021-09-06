@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import Card from '../@shared/components/Card';
+import Empty from '../@shared/components/Empty';
 import Header from '../@shared/components/Header';
 import useNotes from '../@shared/hooks/useNotes';
 import Container from '../@shared/styled/Container';
@@ -16,6 +17,8 @@ const Favorites: React.FC<Props> = () => {
       <FlatList
         data={favorites}
         numColumns={2}
+        ListEmptyComponent={<Empty />}
+        scrollEnabled={!!favorites.length}
         columnWrapperStyle={columnWrapperStyle}
         renderItem={({item}) => <Card item={item} />}
       />

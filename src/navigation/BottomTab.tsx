@@ -41,7 +41,7 @@ const Tab = createBottomTabNavigator();
 const BottomTab: React.FC = () => {
   const {theme, toggleTheme} = useTheme();
   React.useEffect(() => {
-    toggleTheme('light');
+    toggleTheme('dark');
   }, [toggleTheme]);
   return (
     <Tab.Navigator

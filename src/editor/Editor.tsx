@@ -4,6 +4,7 @@ import Container from '../@shared/styled/Container';
 import ScrollView from '../@shared/styled/ScrollView';
 import Parser from '../parser/Parser';
 import Header from './components/Header';
+import ToolBar from './components/ToolBar';
 import useEditorLogic from './hooks/useEditorLogic';
 
 interface Props {}
@@ -34,6 +35,7 @@ const Editor: React.FC<Props> = () => {
           <Parser opacity={1}>{logic.note?.text}</Parser>
         </Content>
       </ScrollView>
+      <ToolBar />
     </Container>
   );
 };

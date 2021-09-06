@@ -17,20 +17,22 @@ const Header: React.FC<Props> = props => {
   return (
     <Container testID={'header-editor'}>
       <Left onPress={navigation.goBack}>
-        <Icon name={'arrow-back'} color={theme.primaryText} />
+        <Icon size={25} name={'arrow-back'} color={theme.primaryText} />
       </Left>
       <Right>
-        <Star onPress={props.toggleNoteFavorite}>
-          <Icon
-            size={28}
-            type={'Feather'}
-            name={'bookmark'}
-            color={props.isFavorite ? theme.primary : theme.primaryText}
-          />
-        </Star>
+        {!props.isArchived && (
+          <Star onPress={props.toggleNoteFavorite}>
+            <Icon
+              size={25}
+              type={'Feather'}
+              name={'bookmark'}
+              color={props.isFavorite ? theme.primary : theme.primaryText}
+            />
+          </Star>
+        )}
         <Archive onPress={props.toggleNoteArchived}>
           <Icon
-            size={28}
+            size={25}
             type={'MaterialCommunityIcons'}
             name={'archive-arrow-down-outline'}
             color={props.isArchived ? theme.primary : theme.primaryText}
