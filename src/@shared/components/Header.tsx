@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import useTheme from '../hooks/useTheme';
+import {openSetting} from '../services/navigator';
 import Icon from './Icon';
 
 interface Props {
@@ -12,7 +13,7 @@ const Header: React.FC<Props> = props => {
   return (
     <Container testID={'header'}>
       <Title testID={'title'}>{props.title}</Title>
-      <Settings>
+      <Settings onPress={openSetting}>
         <Icon
           size={25}
           name={'settings'}

@@ -1,30 +1,28 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import Card from '../@shared/components/Card';
+import {renderItem} from '../@shared/components/Card';
+import {renderEmpty} from '../@shared/components/Empty';
 import Header from '../@shared/components/Header';
+import useNotes from '../@shared/hooks/useNotes';
 import Container from '../@shared/styled/Container';
 import FlatList from '../@shared/styled/FlatList';
-import getMockNotes from '../__testUtils__/input';
+import AddNoteButton from './components/AddNoteButton';
 
 interface Props {}
 
 const Home: React.FC<Props> = () => {
-  const data = getMockNotes();
+  const {active} = useNotes();
   return (
     <Container>
       <Header title={'Notes'} />
       <FlatList
-        data={data}
-        numColumns={2}
-        columnWrapperStyle={columnWrapperStyle}
-        renderItem={({item}) => <Card item={item} />}
+        data={active}
+        renderItem={renderItem}
+        scrollEnabled={!!active.length}
+        ListEmptyComponent={renderEmpty}
       />
+      <AddNoteButton />
     </Container>
   );
 };
-
-const columnWrapperStyle = StyleSheet.create({
-  columnWrapperStyle: {justifyContent: 'space-between'},
-}).columnWrapperStyle;
 
 export default Home;

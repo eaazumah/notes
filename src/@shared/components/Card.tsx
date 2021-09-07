@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import Parser from '../../parser/Parser';
-import {deviceWidth} from '../constants';
-import capitalize from '../helpers/capitalize';
+import {INote} from '../@types';
+import {getOpenEditor} from '../services/navigator';
 
 interface ICardItem {
   id: string;
@@ -17,38 +17,28 @@ interface ICardProps {
 }
 
 const Card: React.FC<ICardProps> = props => {
-  const title = capitalize(props.item.title);
+  const openEditor = getOpenEditor(props.item.id);
+  console.log(props.item.id);
   return (
-    <Container activeOpacity={0.8}>
-      <Title numberOfLines={1}>{title}</Title>
-      <Parser numberOfLines={10} opacity={0.8}>
-        {props.item.text}
-      </Parser>
+    <Container activeOpacity={0.8} onPress={openEditor}>
+      <Parser maxHeight={200} opacity={0.8} text={props.item.text} />
     </Container>
   );
 };
 
 const Container = styled.TouchableOpacity`
+  flex: 1;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
   margin-horizontal: 7px;
-  width: ${deviceWidth / 2.3}px;
-  border-width: 1px;
+  border-width: 1.5px;
+  max-height: 200px;
   border-color: ${props => props.theme.surface};
 `;
 
-const Title = styled.Text`
-  font-size: 15px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: ${props => props.theme.primaryText};
-`;
-
-// const CreatedAt = styled.Text`
-//   font-size: 12px;
-//   color: ${props => props.theme.primary};
-// `;
-
 export default Card;
+
+export const renderItem = ({item}: {item: INote}) => {
+  return <Card item={item} />;
+};

@@ -48,6 +48,7 @@ export const routes = {
   home: 'Home',
   editor: 'Editor',
   splash: 'Splash',
+  settings: 'Settings',
   archived: 'Archived',
   favorites: 'Favorites',
   bottomTab: 'BottomTab',
