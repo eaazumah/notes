@@ -46,3 +46,7 @@ export const getOpenEditor = (noteId: string) => {
 export const openEditor = () => {
   return navigate(routes.editor, {});
 };
+
+export const openSetting = () => {
+  return navigate(routes.settings, {});
+};

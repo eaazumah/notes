@@ -6,7 +6,7 @@ import {openEditor} from '../../@shared/services/navigator';
 
 interface Props {}
 
-const AddNoteButton: React.FC<Props> = props => {
+const AddNoteButton: React.FC<Props> = () => {
   return (
     <Container onPress={openEditor}>
       <Icon

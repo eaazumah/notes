@@ -20,39 +20,31 @@ const Editor: React.FC<Props> = () => {
         toggleNoteFavorite={logic.toggleNoteFavorite}
       />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Title
-          multiline
-          value={logic.note?.title}
-          placeholder={'Title'}
-          onChangeText={logic.updateNoteTitle}
-        />
-        <Content
-          multiline
-          autoFocus
-          placeholder={'Note'}
-          onChangeText={logic.handlerTextChange}
-          onSelectionChange={logic.onSelectionChange}>
-          <Parser opacity={1}>{logic.note?.text}</Parser>
-        </Content>
+        {logic.isEditing ? (
+          <NoteTextInput
+            multiline
+            autoFocus
+            placeholder={'Note'}
+            onChangeText={logic.handlerTextChange}
+            defaultValue={logic.note?.text}
+          />
+        ) : (
+          <Parser text={logic.note?.text} />
+        )}
       </ScrollView>
-      <ToolBar />
+      <ToolBar
+        isEditing={logic.isEditing}
+        toggleIsEditing={logic.toggleIsEditing}
+      />
     </Container>
   );
 };
 
-const Title = styled.TextInput.attrs(props => ({
-  placeholderTextColor: props.theme.primaryText,
-}))`
-  font-size: 18px;
-  margin-top: 5px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: ${props => props.theme.primaryText};
-`;
-
-const Content = styled.TextInput.attrs(props => ({
+const NoteTextInput = styled.TextInput.attrs(props => ({
   scrollEnabled: false,
   placeholderTextColor: props.theme.primaryText,
-}))``;
+}))`
+  color: ${props => props.theme.primaryText};
+`;
 
 export default Editor;

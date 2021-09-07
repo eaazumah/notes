@@ -1,29 +1,31 @@
-import React, {ReactNode} from 'react';
-import ParsedText from 'react-native-parsed-text';
+import React from 'react';
+import HTMLView from 'react-native-htmlview';
 import styled from 'styled-components/native';
-import {parsers} from './helpers/_constants';
+import parseMarkdown from './helpers/parseMarkdown';
 
 interface Props {
+  text?: string;
   opacity?: number;
-  children: ReactNode;
-  numberOfLines?: number;
+  maxHeight?: number | undefined;
 }
 
 const Parser: React.FC<Props> = props => {
-  return (
-    <Text
-      parse={parsers}
-      opacity={props.opacity}
-      numberOfLines={props.numberOfLines}>
-      {props.children}
-    </Text>
-  );
+  const parseText = parseMarkdown(props.text);
+  return <Text value={parseText} maxHeight={props.maxHeight} />;
 };
 
-const Text = styled(ParsedText)<{opacity?: number}>`
-  font-size: 15px;
-  opacity: ${props => props.opacity || 1};
-  color: ${props => props.theme.primaryText};
-`;
+const Text = styled(HTMLView).attrs<{
+  maxHeight: number | undefined;
+}>(props => ({
+  textComponentProps: {
+    style: {
+      color: props.theme.primaryText,
+    },
+  },
+  rootComponentProps: {
+    overflow: 'hidden',
+    maxHeight: props.maxHeight,
+  },
+}))<{maxHeight: number | undefined}>``;
 
 export default Parser;

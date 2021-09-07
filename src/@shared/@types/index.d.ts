@@ -61,7 +61,7 @@ export type PopupType =
  * Redux state and actions type definitions
  */
 
-export type ITheme = 'dark' | 'light' | undefined;
+export type ITheme = 'dark' | 'light' | 'system';
 
 export interface ISettings {
   theme: ITheme;

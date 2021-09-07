@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import Card from '../@shared/components/Card';
-import Empty from '../@shared/components/Empty';
+import {renderItem} from '../@shared/components/Card';
+import {renderEmpty} from '../@shared/components/Empty';
 import Header from '../@shared/components/Header';
 import useNotes from '../@shared/hooks/useNotes';
 import Container from '../@shared/styled/Container';
@@ -16,18 +15,12 @@ const Archived: React.FC<Props> = () => {
       <Header title={'Archived'} />
       <FlatList
         data={archived}
-        numColumns={2}
-        ListEmptyComponent={<Empty />}
+        renderItem={renderItem}
+        ListEmptyComponent={renderEmpty}
         scrollEnabled={!!archived.length}
-        columnWrapperStyle={columnWrapperStyle}
-        renderItem={({item}) => <Card item={item} />}
       />
     </Container>
   );
 };
-
-const columnWrapperStyle = StyleSheet.create({
-  columnWrapperStyle: {justifyContent: 'space-between'},
-}).columnWrapperStyle;
 
 export default Archived;

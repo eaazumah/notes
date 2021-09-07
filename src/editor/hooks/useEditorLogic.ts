@@ -1,35 +1,41 @@
 import {useRoute} from '@react-navigation/native';
+import debounce from 'debounce';
 import {useEffect, useState} from 'react';
 import {IEditorRoute} from '../../@shared/@types';
 import useNote from '../../@shared/hooks/useNote';
 import getNewNote from '../helpers/getNewNote';
 import getNoteIdFromRoute from '../helpers/getNoteIdFromRoute';
-import useTextProcessor from './useTextProcessor';
 
 const useEditorLogic = () => {
   const route = useRoute<IEditorRoute>();
   const idFromRoute = getNoteIdFromRoute(route);
   const [noteId, setNoteId] = useState(idFromRoute);
+  const [isEditing, setIsEditing] = useState(!noteId);
 
-  const query = useNote(noteId);
+  const noteResult = useNote(noteId);
 
-  const processor = useTextProcessor({
-    text: query.note?.text,
-    updateText: query.updateNoteText,
-  });
+  const handlerTextChange = debounce(noteResult.updateNoteText, 500);
+
+  const toggleIsEditing = () => setIsEditing(!isEditing);
 
   useEffect(() => {
     if (!noteId) {
       const newNote = getNewNote();
-      query.addNote(newNote);
+      noteResult.addNote(newNote);
       setNoteId(newNote.id);
     }
     return () => {
-      query.cleanNotes();
+      noteResult.cleanNotes();
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return {...query, ...processor};
+  return {
+    isEditing,
+    setIsEditing,
+    ...noteResult,
+    toggleIsEditing,
+    handlerTextChange,
+  };
 };
 
 export default useEditorLogic;

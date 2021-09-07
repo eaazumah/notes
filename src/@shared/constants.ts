@@ -48,6 +48,7 @@ export const routes = {
   home: 'Home',
   editor: 'Editor',
   splash: 'Splash',
+  settings: 'Settings',
   archived: 'Archived',
   favorites: 'Favorites',
   bottomTab: 'BottomTab',
@@ -60,22 +61,3 @@ export const themes = {
 
 export const deviceWidth = Dimensions.get('screen').width;
 export const deviceHeight = Dimensions.get('screen').height;
-
-export const pattern = {
-  italic: '*&*&*',
-  bold: '#@#@',
-};
-
-export const regex = {
-  half: /\*\&\*\&\*|\#\@\#\@/,
-  halfItalic: /\*\&\*\&\*/,
-  italic: /\*\&\*\&\*(.*)\*\&\*\&\*/,
-  italicEmpty: /\*\&\*\&\*\*\&\*\&\*/g,
-
-  halfBold: /\#\@\#\@/,
-  bold: /\#\@\#\@(.*)\#\@\#\@/,
-  boldEmpty: /\#\@\#\@\#\@\#\@/g,
-  full: /\*\&\*\&\*(.*)\*\&\*\&\*|\#\@\#\@(.*)\#\@\#\@/,
-};
-
-const text = `*&*&*italic*&*&*   #@#@bold#@#@`;

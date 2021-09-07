@@ -23,8 +23,8 @@ const useNote = (id = '') => {
   const isArchived = getIsArchived(note);
   const isFavorite = getIsFavorite(note);
 
-  const updateNote = (note: INote) => {
-    dispatch(notesActions.updateNote(note));
+  const updateNote = (_note: INote) => {
+    dispatch(notesActions.updateNote(_note));
   };
 
   const updateNoteTitle = (title: string) => {
@@ -35,8 +35,8 @@ const useNote = (id = '') => {
     dispatch(notesActions.updateNote({id, text}));
   };
 
-  const addNote = (note: INote) => {
-    dispatch(notesActions.addNote(note));
+  const addNote = (_note: INote) => {
+    dispatch(notesActions.addNote(_note));
   };
 
   const deleteNote = () => {
@@ -48,7 +48,9 @@ const useNote = (id = '') => {
   };
 
   const toggleNoteArchived = () => {
-    if (!note) return;
+    if (!note) {
+      return;
+    }
     if (!note.archived) {
       updateNote({...note, archived: true, favorite: false});
       return;
@@ -57,7 +59,9 @@ const useNote = (id = '') => {
   };
 
   const toggleNoteFavorite = () => {
-    if (!note) return;
+    if (!note) {
+      return;
+    }
     updateNote({...note, favorite: !note.favorite});
   };
 

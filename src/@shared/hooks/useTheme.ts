@@ -11,11 +11,11 @@ const useTheme = () => {
   const mode = useSelector(selectTheme);
   const theme = getThemeObject(mode, system);
 
-  const toggleTheme = (_theme: ITheme) => {
-    dispatch(settingsActions.updates({theme: _theme}));
+  const updateTheme = (_mode: ITheme) => {
+    dispatch(settingsActions.updates({theme: _mode}));
   };
 
-  return {theme, mode, toggleTheme};
+  return {theme, mode, updateTheme};
 };
 
 export default useTheme;

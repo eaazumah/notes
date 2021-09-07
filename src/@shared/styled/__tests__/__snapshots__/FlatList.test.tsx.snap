@@ -21,6 +21,9 @@ exports[`styled Container works 1`] = `
     Array [
       Object {
         "backgroundColor": "#F5F5F5",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "width": "100%",
       },
     ]
