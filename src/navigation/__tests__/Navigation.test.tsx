@@ -18,22 +18,22 @@ describe('Navigator', () => {
     expect(navigator.toJSON()).toMatchSnapshot();
   });
 
-  test('Navigator functionality test', async () => {
-    const navigator = render(
-      <TestProvider>
-        <Navigator />
-      </TestProvider>,
-    );
+  // test('Navigator functionality test', async () => {
+  //   const navigator = render(
+  //     <TestProvider>
+  //       <Navigator />
+  //     </TestProvider>,
+  //   );
 
-    // const {queryByText, queryByTestId} = navigator;
-    // const headerTitle = queryByText('Notes');
-    // expect(headerTitle).toBeTruthy();
+  //   // const {queryByText, queryByTestId} = navigator;
+  //   // const headerTitle = queryByText('Notes');
+  //   // expect(headerTitle).toBeTruthy();
 
-    // const openSetting = queryByTestId('open-setting');
-    // expect(openSetting).toBeTruthy();
+  //   // const openSetting = queryByTestId('open-setting');
+  //   // expect(openSetting).toBeTruthy();
 
-    // fireEvent.press(openSetting!);
-    // const themeComponent = queryByText('theme');
-    // expect(themeComponent).toBeTruthy();
-  });
+  //   // fireEvent.press(openSetting!);
+  //   // const themeComponent = queryByText('theme');
+  //   // expect(themeComponent).toBeTruthy();
+  // });
 });
