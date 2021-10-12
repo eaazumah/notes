@@ -1,6 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import styled from 'styled-components/native';
+import {ConditionRenderComponent} from '../../@shared/components/ConditionRender';
 import Icon from '../../@shared/components/Icon';
 import useTheme from '../../@shared/hooks/useTheme';
 
@@ -20,7 +21,7 @@ const Header: React.FC<Props> = props => {
         <Icon size={25} name={'arrow-back'} color={theme.primaryText} />
       </Left>
       <Right>
-        {!props.isArchived && (
+        <ConditionRenderComponent renderIf={!props.isArchived}>
           <Star onPress={props.toggleNoteFavorite}>
             <Icon
               size={25}
@@ -29,7 +30,7 @@ const Header: React.FC<Props> = props => {
               color={props.isFavorite ? theme.primary : theme.primaryText}
             />
           </Star>
-        )}
+        </ConditionRenderComponent>
         <Archive onPress={props.toggleNoteArchived}>
           <Icon
             size={25}

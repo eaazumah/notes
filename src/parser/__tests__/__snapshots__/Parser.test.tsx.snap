@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Parser Parser renders correctly 1`] = `
+<HTMLView
+  maxHeight={100}
+  rootComponentProps={
+    Object {
+      "maxHeight": 100,
+      "overflow": "hidden",
+    }
+  }
+  style={
+    Array [
+      Object {},
+    ]
+  }
+  textComponentProps={
+    Object {
+      "style": Object {
+        "color": "#242A37",
+      },
+    }
+  }
+  value="My note"
+/>
+`;

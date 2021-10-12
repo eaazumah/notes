@@ -14,20 +14,18 @@ interface ICardItem {
 
 interface ICardProps {
   item: ICardItem;
+  onPress: () => void;
 }
 
 const Card: React.FC<ICardProps> = props => {
-  const openEditor = getOpenEditor(props.item.id);
-  console.log(props.item.id);
   return (
-    <Container activeOpacity={0.8} onPress={openEditor}>
-      <Parser maxHeight={200} opacity={0.8} text={props.item.text} />
+    <Container testID={'card'} activeOpacity={0.8} onPress={props.onPress}>
+      <Parser maxHeight={200} text={props.item.text} />
     </Container>
   );
 };
 
 const Container = styled.TouchableOpacity`
-  flex: 1;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -37,8 +35,9 @@ const Container = styled.TouchableOpacity`
   border-color: ${props => props.theme.surface};
 `;
 
-export default Card;
-
-export const renderItem = ({item}: {item: INote}) => {
-  return <Card item={item} />;
+export const renderCardItem = ({item}: {item: INote}) => {
+  const openEditor = getOpenEditor(item.id);
+  return <Card item={item} key={item.id} onPress={openEditor} />;
 };
+
+export default Card;

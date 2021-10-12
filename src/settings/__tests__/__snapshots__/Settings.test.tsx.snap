@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Settings renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F5F5F5",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginTop": 50,
+          "paddingHorizontal": 17,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="header-editor"
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Icon
+        color="#242A37"
+        name="arrow-back"
+        size={25}
+        testID="icon"
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5F5F5",
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#e6e6e6",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "height": 55,
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "paddingHorizontal": 27,
+          "width": "100%",
+        }
+      }
+      testID="theme-item"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#242A37",
+            },
+          ]
+        }
+      >
+        Theme
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#e6e6e6",
+          "borderBottomWidth": 1,
+          "flexDirection": "row",
+          "height": 55,
+          "justifyContent": "space-between",
+          "opacity": 1,
+          "paddingHorizontal": 27,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#242A37",
+            },
+          ]
+        }
+      >
+        App Version: 
+        0.0.1
+      </Text>
+    </View>
+  </View>
+  <Modal
+    isVisible={false}
+    testID="theme-picker"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5F5F5",
+            "borderRadius": 6,
+            "justifyContent": "center",
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5F5F5",
+            "borderBottomColor": "#e6e6e6",
+            "borderBottomLeftRadius": 6,
+            "borderBottomRightRadius": 6,
+            "borderBottomWidth": 1,
+            "height": 50,
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+        testID="light-item"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#242A37",
+              },
+            ]
+          }
+        >
+          Light
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5F5F5",
+            "borderBottomColor": "#e6e6e6",
+            "borderBottomLeftRadius": 6,
+            "borderBottomRightRadius": 6,
+            "borderBottomWidth": 1,
+            "height": 50,
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+        testID="dark-item"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#242A37",
+              },
+            ]
+          }
+        >
+          Dark
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5F5F5",
+            "borderBottomColor": "#e6e6e6",
+            "borderBottomLeftRadius": 6,
+            "borderBottomRightRadius": 6,
+            "borderBottomWidth": 1,
+            "height": 50,
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "100%",
+          }
+        }
+        testID="system-item"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#242A37",
+              },
+            ]
+          }
+        >
+          System Theme
+        </Text>
+      </View>
+    </View>
+  </Modal>
+</View>
+`;

@@ -8,12 +8,12 @@ import {lightTheme} from '../../@shared/constants';
 import Splash from '../Splash';
 
 it('renders correctly', () => {
-  const tree = renderer
+  const screen = renderer
     .create(
       <ThemeProvider theme={lightTheme}>
         <Splash />
       </ThemeProvider>,
     )
     .toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(screen).toMatchSnapshot();
 });

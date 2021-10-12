@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editor Editor renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#F5F5F5",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginTop": 50,
+          "paddingHorizontal": 17,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="header-editor"
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Icon
+        color="#242A37"
+        name="arrow-back"
+        size={25}
+        testID="icon"
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Icon
+          color="#242A37"
+          name="bookmark"
+          size={25}
+          testID="icon"
+        />
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Icon
+          color="#242A37"
+          name="archive-arrow-down-outline"
+          size={25}
+          testID="icon"
+        />
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    showsVerticalScrollIndicator={false}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#F5F5F5",
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "paddingHorizontal": 18,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View>
+      <HTMLView
+        rootComponentProps={
+          Object {
+            "maxHeight": undefined,
+            "overflow": "hidden",
+          }
+        }
+        style={
+          Array [
+            Object {},
+          ]
+        }
+        textComponentProps={
+          Object {
+            "style": Object {
+              "color": "#242A37",
+            },
+          }
+        }
+        value=""
+      />
+    </View>
+  </RCTScrollView>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={
+      Array [
+        Object {},
+      ]
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+            "paddingBottom": 17,
+            "paddingLeft": 17,
+            "paddingRight": 17,
+            "paddingTop": 17,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="toggle-edit"
+      >
+        <Icon
+          color="#242A37"
+          name="edit"
+          size={25}
+          testID="icon"
+        />
+      </View>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;

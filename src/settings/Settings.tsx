@@ -6,20 +6,20 @@ import ThemePicker from './components/ThemePicker';
 interface Props {}
 
 const Settings: React.FC<Props> = () => {
-  const [showThemePicker, setShowThemePicker] = useState(false);
-  const show = () => setShowThemePicker(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const showThemePicker = () => setIsVisible(true);
   return (
     <Container>
       <Header />
       <Content>
-        <Item onPress={show}>
+        <Item onPress={showThemePicker} testID={'theme-item'}>
           <Text>Theme</Text>
         </Item>
         <Item>
           <Text>App Version: {pkg.version}</Text>
         </Item>
       </Content>
-      <ThemePicker show={showThemePicker} setShow={setShowThemePicker} />
+      <ThemePicker isVisible={isVisible} setIsVisible={setIsVisible} />
     </Container>
   );
 };

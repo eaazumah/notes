@@ -13,7 +13,7 @@ const Header: React.FC<Props> = props => {
   return (
     <Container testID={'header'}>
       <Title testID={'title'}>{props.title}</Title>
-      <Settings onPress={openSetting}>
+      <Settings testID={'open-settings'} onPress={openSetting}>
         <Icon
           size={25}
           name={'settings'}

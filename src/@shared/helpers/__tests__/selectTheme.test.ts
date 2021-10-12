@@ -6,6 +6,7 @@ const state: IReduxSate = {
   settings: {
     theme: 'light',
   },
+  notes: [],
 };
 
 describe('Redux state theme selector', () => {

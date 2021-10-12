@@ -1,6 +1,5 @@
-import {useDispatch, useSelector} from 'react-redux';
-import {INote, INotes, IReduxSate} from '../@types';
-import {notesActions} from '../redux/notes/slice';
+import {useSelector} from 'react-redux';
+import {INotes, IReduxSate} from '../@types';
 
 const selectNotes = (state: IReduxSate) => {
   return state.notes;
@@ -19,16 +18,12 @@ const getActive = (notes: INotes) => {
 };
 
 const useNotes = () => {
-  const dispatch = useDispatch();
   const notes = useSelector(selectNotes);
   const active = getActive(notes);
   const archived = getArchived(notes);
   const favorites = getFavorites(notes);
 
-  const reset = () => dispatch(notesActions.reset());
-  const addNote = (note: INote) => dispatch(notesActions.addNote(note));
-
-  return {notes, active, archived, favorites, addNote, reset};
+  return {notes, active, archived, favorites};
 };
 
 export default useNotes;

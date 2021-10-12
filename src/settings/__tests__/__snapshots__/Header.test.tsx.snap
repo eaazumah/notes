@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Header renders correctly 1`] = `
+exports[`Settings Header Header renders correctly 1`] = `
 <View
   style={
     Array [
       Object {
         "flexDirection": "row",
-        "height": 45,
         "justifyContent": "space-between",
         "marginTop": 50,
         "paddingHorizontal": 17,
@@ -14,26 +13,12 @@ exports[`Header Header renders correctly 1`] = `
       },
     ]
   }
-  testID="header"
+  testID="header-editor"
 >
-  <Text
-    style={
-      Array [
-        Object {
-          "color": "#242A37",
-          "fontSize": 30,
-          "fontWeight": "800",
-        },
-      ]
-    }
-    testID="title"
-  >
-    Home
-  </Text>
   <View
     accessible={true}
     collapsable={false}
-    focusable={true}
+    focusable={false}
     nativeID="animatedComponent"
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -47,14 +32,22 @@ exports[`Header Header renders correctly 1`] = `
         "opacity": 1,
       }
     }
-    testID="open-settings"
   >
     <Icon
       color="#242A37"
-      name="settings"
+      name="arrow-back"
       size={25}
       testID="icon"
     />
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+      ]
+    }
+  />
 </View>
 `;

@@ -4,8 +4,8 @@ import styled from 'styled-components/native';
 import useTheme from '../../@shared/hooks/useTheme';
 
 interface Props {
-  show: boolean;
-  setShow?: (e: boolean) => void;
+  isVisible: boolean;
+  setIsVisible?: (e: boolean) => void;
 }
 
 const ThemePicker: React.FC<Props> = props => {
@@ -13,29 +13,29 @@ const ThemePicker: React.FC<Props> = props => {
 
   const changeToDark = () => {
     updateTheme('dark');
-    props.setShow?.(false);
+    props.setIsVisible?.(false);
   };
 
   const changeToLight = () => {
     updateTheme('light');
-    props.setShow?.(false);
+    props.setIsVisible?.(false);
   };
 
   const changeToSystem = () => {
     updateTheme('system');
-    props.setShow?.(false);
+    props.setIsVisible?.(false);
   };
 
   return (
-    <Modal isVisible={props.show}>
+    <Modal testID={'theme-picker'} isVisible={props.isVisible}>
       <Content>
-        <Item onPress={changeToLight}>
+        <Item onPress={changeToLight} testID={'light-item'}>
           <Text>Light</Text>
         </Item>
-        <Item onPress={changeToDark}>
+        <Item onPress={changeToDark} testID={'dark-item'}>
           <Text>Dark</Text>
         </Item>
-        <Item onPress={changeToSystem}>
+        <Item onPress={changeToSystem} testID={'system-item'}>
           <Text>System Theme</Text>
         </Item>
       </Content>
