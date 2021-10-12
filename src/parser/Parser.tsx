@@ -5,7 +5,6 @@ import parseMarkdown from './helpers/parseMarkdown';
 
 interface Props {
   text?: string;
-  opacity?: number;
   maxHeight?: number | undefined;
 }
 
@@ -28,4 +27,4 @@ const Text = styled(HTMLView).attrs<{
   },
 }))<{maxHeight: number | undefined}>``;
 
-export default Parser;
+export default React.memo(Parser);

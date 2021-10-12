@@ -7,9 +7,11 @@ interface Props {}
 
 const Splash: React.FC<Props> = () => {
   useEffect(() => {
-    setTimeout(navigateToBottomTab, 1000);
-    return;
+    setTimeout(() => {
+      navigateToBottomTab();
+    }, 1000);
   }, []);
+
   return (
     <Container>
       <Logo width={200} height={200} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderItem} from '../@shared/components/Card';
+import {renderCardItem} from '../@shared/components/Card';
 import {renderEmpty} from '../@shared/components/Empty';
 import Header from '../@shared/components/Header';
 import useNotes from '../@shared/hooks/useNotes';
@@ -15,7 +15,7 @@ const Favorites: React.FC<Props> = () => {
       <Header title={'Favorites'} />
       <FlatList
         data={favorites}
-        renderItem={renderItem}
+        renderItem={renderCardItem}
         ListEmptyComponent={renderEmpty}
         scrollEnabled={!!favorites.length}
       />

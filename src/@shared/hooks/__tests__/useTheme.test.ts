@@ -1,7 +1,7 @@
 import {} from '@testing-library/react-hooks';
 import renderHookReduxWrap from '../../../__testUtils__/renderHookProvider';
 import {darkTheme, lightTheme} from '../../constants';
-import useTheme from '../../hooks/useTheme';
+import useTheme from '../useTheme';
 
 describe('The useTheme hook', () => {
   it('should describe a closed modal by default', () => {

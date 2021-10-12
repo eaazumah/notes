@@ -13,8 +13,8 @@ const ToolBar = (props: Props) => {
   const {theme} = useTheme();
   return (
     <SafeAreaView>
-      <Container>
-        <ToggleEdit onPress={props.toggleIsEditing}>
+      <Content>
+        <ToggleEdit testID={'toggle-edit'} onPress={props.toggleIsEditing}>
           <Icon
             size={25}
             type={'MaterialIcons'}
@@ -22,7 +22,7 @@ const ToolBar = (props: Props) => {
             name={props.isEditing ? 'edit-off' : 'edit'}
           />
         </ToggleEdit>
-      </Container>
+      </Content>
     </SafeAreaView>
   );
 };
@@ -31,7 +31,7 @@ const ToggleEdit = styled.TouchableOpacity``;
 
 const SafeAreaView = styled.SafeAreaView``;
 
-const Container = styled.KeyboardAvoidingView`
+const Content = styled.KeyboardAvoidingView`
   width: 100%;
   padding: 17px;
   flex-direction: row;

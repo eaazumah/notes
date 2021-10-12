@@ -8,10 +8,10 @@ interface Props {}
 
 const Header: React.FC<Props> = () => {
   const {theme} = useTheme();
-  const navigation = useNavigation();
+  const {goBack} = useNavigation();
   return (
     <Container testID={'header-editor'}>
-      <Left onPress={navigation.goBack}>
+      <Left onPress={goBack}>
         <Icon size={25} name={'arrow-back'} color={theme.primaryText} />
       </Left>
       <Right />

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {ConditionRenderComponent} from '../@shared/components/ConditionRender';
 import Container from '../@shared/styled/Container';
 import ScrollView from '../@shared/styled/ScrollView';
 import Parser from '../parser/Parser';
@@ -20,17 +21,19 @@ const Editor: React.FC<Props> = () => {
         toggleNoteFavorite={logic.toggleNoteFavorite}
       />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {logic.isEditing ? (
+        <ConditionRenderComponent renderIf={logic.isEditing}>
           <NoteTextInput
             multiline
             autoFocus
             placeholder={'Note'}
-            onChangeText={logic.handlerTextChange}
+            testID={'note-input'}
             defaultValue={logic.note?.text}
+            onChangeText={logic.handlerTextChange}
           />
-        ) : (
+        </ConditionRenderComponent>
+        <ConditionRenderComponent renderIf={!logic.isEditing}>
           <Parser text={logic.note?.text} />
-        )}
+        </ConditionRenderComponent>
       </ScrollView>
       <ToolBar
         isEditing={logic.isEditing}

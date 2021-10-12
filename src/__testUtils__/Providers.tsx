@@ -8,7 +8,7 @@ interface IReduxProvider {
   children?: React.ReactNode;
 }
 
-export const TextReduxProvider = ({children}: IReduxProvider) => {
+export const TestReduxProvider = ({children}: IReduxProvider) => {
   return <Provider store={store}>{children}</Provider>;
 };
 
@@ -18,23 +18,19 @@ interface ITestThemeProvider {
 
 export const TestThemeProvider = ({children}: ITestThemeProvider) => {
   const {theme} = useTheme();
-  return (
-    <TextReduxProvider>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </TextReduxProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 interface ITestProviders {
   children: React.ReactNode;
 }
 
-const TextProvider = ({children}: ITestProviders) => {
+const TestProvider = ({children}: ITestProviders) => {
   return (
-    <TextReduxProvider>
+    <TestReduxProvider>
       <TestThemeProvider>{children}</TestThemeProvider>
-    </TextReduxProvider>
+    </TestReduxProvider>
   );
 };
 
-export default TextProvider;
+export default TestProvider;
